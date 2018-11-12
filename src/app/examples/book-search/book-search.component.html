@@ -1,0 +1,9 @@
+<h2>Book Search</h2>
+
+<mat-form-field>
+  <input matInput [formControl]="searchInput" placeholder="Search for a book" />
+</mat-form-field>
+
+<p>
+    {{ books$ | async | json }}
+</p>

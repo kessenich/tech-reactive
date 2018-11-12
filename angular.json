@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "tech-reactive"
+  "defaultProject": "tech-reactive",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

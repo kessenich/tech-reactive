@@ -16,6 +16,9 @@ import { ExamplesModule } from './examples/examples.module';
 import { environment } from 'src/environments/environment';
 import { NgrxBasicsComponent } from './ngrx-basics/ngrx-basics.component';
 import { IntroComponent } from './intro/intro.component';
+import { EffectsModule } from '@ngrx/effects';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { IntroComponent } from './intro/intro.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     ExamplesModule,
     StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production // Restrict extension to log-only mode
