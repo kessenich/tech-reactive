@@ -1,0 +1,89 @@
+<div class="content">
+  <h1>RxJS Basics</h1>
+
+  <img style="width: 500px;" class="center" src="assets/marble.png" />
+
+  <p>
+    Reactive Extensions for JavaScript or short RxJS is an Functional Reactive
+    Programming Framework for working with ansynchrounus and event based data
+    streams with pure functions. Behind ReactiveX is the Observable Pattern,
+    which combines the Observer and Iterrator Pattern. With this combination
+    Observers get notified about changes, completion and erros.
+  </p>
+
+  <div class="note">
+    <h3>Observer Pattern</h3>
+    <p>
+      The Observer Pattern consists of two players: Subject and Observer. The
+      Subject holds a list of observers, which can be added, removed and
+      notified about changes. The Observer has one update method, which is
+      called by the Subject.
+    </p>
+  </div>
+
+  <div class="note">
+    <h3>Iterrator Pattern</h3>
+    <p>
+      The Iterrator Pattern is similar to foreach loops where an iterator goes
+      over the items of a list.
+    </p>
+  </div>
+
+  <h2>Coe Concepts</h2>
+  <p>
+    <i>Observables</i> are classes representing a <i>Stream</i> of data. An
+    <i>Observer</i> is a class for emitting data inside an <i>Observable</i>.
+    With <i>Operators</i> that are immutable methods <i>Streams</i> can be
+    manipulated.
+  </p>
+  <pre style="font-weight: bolder;">
+      let stream$ = Observable.create(observer => observer.next(5));
+      stream$ = stream$.pipe(map(x => x as number + 8));
+      stream$.subscribe(data => console.log(data));
+  </pre>
+
+  <h2>List of some Operators</h2>
+  <h4>Creation Operators</h4>
+  <ul>
+    <li>of() - Creates nearly from everything an observable</li>
+    <li>fromEvent() - Creates an observable from JavaScript events</li>
+  </ul>
+
+  <h4>Transforming Operators</h4>
+  <ul>
+    <li>
+      map() - transform the items emitted by an Observable by applying a
+      function to each item
+    </li>
+  </ul>
+
+  <h4>Filter Operators</h4>
+  <ul>
+    <li>
+      debounce() - only emit an item from an Observable if a particular timespan
+      has passed without it emitting another item
+    </li>
+    <li>
+      filter() - emit only those items from an Observable that pass a predicate
+      test
+    </li>
+  </ul>
+
+  <a href="http://reactivex.io/documentation/operators.html" target="_blank"
+    >And even more operators</a
+  >
+
+  <h2>Marble Testing</h2>
+  <p>
+    See marble-testing.spec.ts
+  </p>
+
+  <h3>Read more</h3>
+  <ul>
+    <li><a href="http://reactivex.io/" target="_blank">ReactiveX</a></li>
+    <li>
+      <a href="https://rxjs-dev.firebaseapp.com/" target="_blank">RxJS</a>
+    </li>
+    <li><a href="http://rxfiddle.net/" target="_blank">RxFiddle</a></li>
+  </ul>
+</div>

@@ -1,0 +1,67 @@
+<div class="content">
+  <h1>Redux Pattern</h1>
+  <p>
+    Redux changes flux in a way that development tools can better work with it.
+    For example with Redux time traveling is possible.
+  </p>
+
+  <h2>Redux Flow</h2>
+  <p>
+    First an <i>Action</i> is created by a user event. Then the event is sent to
+    a core <i>Reducer</i> function, that distributes the <i>Action</i> to its
+    child <i>Reducers</i>, that process the <i>Action</i> inside a switch
+    statement and return a copy of the changed state. The new state is saved to
+    the application <i>Store</i>. <i>Views</i> subscribed to the store get
+    notifed about state changes and re-render.
+  </p>
+
+  <img style="width: 500px;" class="center" src="assets/redux.png" />
+
+  <h2>Action</h2>
+  <p>
+    An <i>Action</i> consists of a "type" and a "payload" that can be created by
+    action creator methods that are grouped to action helpers.
+    <i>Actions</i> can be created by users, e.g. click event, or server
+    responses. (same as flux)
+  </p>
+
+  <h2>Reducer</h2>
+  <p>
+    <i>Reducer</i> are have the state logic inside and are responsible for
+    handling transitions from one state to the next one. <i>Reducers</i> are
+    pure functions which produce the same output for a given input. Compared to
+    flux the switch statement lives inside <i>Reducers</i> in redux.
+  </p>
+
+  <h2>Store</h2>
+  <p>
+    Redux has only one single <i>Store</i> that is dumb and his responsiblity is
+    storing the application state. Compared to flux in redux the
+    <i>Store</i> has no logic.
+  </p>
+
+  <h2>View</h2>
+  <p>
+    <i>Views</i> subscribe to the state and get notified about changes by
+    observables.
+  </p>
+
+  <h3>Read more</h3>
+  <ul>
+    <li><a href="https://redux.js.org/" target="_blank">Redux Official</a></li>
+    <li>
+      <a
+        href="https://steemit.com/technology/@rakeshd/ngrx-redux-in-angular-5-min-read"
+        target="_blank"
+        >Redux in 5 min</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6"
+        target="_blank"
+        >Redux Cartoon</a
+      >
+    </li>
+  </ul>
+</div>

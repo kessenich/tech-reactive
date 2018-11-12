@@ -1,27 +1,21 @@
-# TechReactive
+# Scaling your Angular Application with 1.21 GIGAWATTS
+## Reactive programming with RxJS and use of NgRx for managing application state.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+Heutzutage werden Single Page Applications immer komplexer. Es gibt mehr Datenabfragen gegen Web Services, UI Elemente sind miteinander verknüpft und ändern ihren Zustand abhängig voneinander. Zudem gibt es Daten, die auf Client-Seite gecached werden sollen. Dies sind Beispiele, die den Zustand der Anwendung beschreiben und ändern.
 
-## Development server
+Wie managen wir diesen Zustand in unserer Applikation? Hierzu gibt es mehrere Patterns, die alle ihre Vor- und Nachteile mit sich bringen. Ein Beispiel in Angular, ist es einen Service zu nutzen, um Daten global verfügbar zu machen. Alternativ können Daten auch durch mehrere Komponenten per Bindings geschoben werden. Dies sind beides nicht immer die idealen Vorgehensweisen, gerade wenn die Applikation oder der Use Case komplexer wird.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Als "neue" Alternative gibt es NgRx. Doch was ist NgRx? NgRx ist eine Angular Erweiterung, die es dem Entwickler ermöglicht den Zustand der Anwendung mithilfe des Redux Patterns zu managen. Gerne würde ich Euch einen kleinen Überblick über diese Erweiterung geben. Dabei werden wir an folgenden Themen vorbei kommen:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Agenda
+* RxJS 101
+    * Streams
+    * Observables
+    * Operators
+* Flux Pattern
+* Redux Pattern
+* NgRx
+    * Store
+    * Effects
+    * Debugging
+* Diskussion

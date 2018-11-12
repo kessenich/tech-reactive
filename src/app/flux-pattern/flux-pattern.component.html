@@ -1,0 +1,78 @@
+<div class="content">
+  <h1>Flux Pattern</h1>
+
+  <h2>Challange</h2>
+  <p>
+    Facebook had several issues with the communication between different
+    elements on their page. For example the chat notifcation counter at the top
+    was not in sync with the chat window at the bottom of the page. If you have
+    a look at the typical communication flow of an MVC application, especially
+    when the application communicates between several views, you can imagine the
+    difficulties.
+  </p>
+
+  <img style="width: 500px;" class="center" src="assets/model-view.png" />
+
+  <h2>Solution</h2>
+  <p>
+    For Facebook the solution was to create an unidirectional data flow instead
+    of using an bidirectional to make state changes more predictable. The flow
+    is triggered by the initial page load event or a user event. First an
+    <i>Action</i> is created with a intent and a payload, e.g. change the chat
+    counter to five messages. The <i>Action</i> is then handled by a
+    <i>Dispatcher</i> who sends it to every <i>Store</i> who listens. The
+    <i>Store</i> does the state management and triggers the <i>View</i> for
+    rerendering.
+  </p>
+
+  <img style="width: 700px;" class="center" src="assets/flux.png" />
+
+  <h3>Action</h3>
+  <p>
+    An <i>Action</i> consists of a "type" and a "payload" that can be created by
+    action creator methods that are grouped to action helpers.
+    <i>Actions</i> can be created by users, e.g. click event, or server
+    responses.
+  </p>
+
+  <h3>Dispatcher</h3>
+  <p>
+    The <i>Dispatcher</i> is the central hub that manages all data flow in a
+    Flux application. Each <i>Store</i> registers itself at the
+    <i>Dispatcher</i> with a callback. When an <i>Action</i> is dispatched to
+    it, all registred <i>Stores</i> get notified.
+  </p>
+
+  <h3>Store</h3>
+  <p>
+    The application and state changing logic lives inside the <i>Store</i>. The
+    <i>Store</i> gets all events from the dispatcher and decides within an
+    switch statement on the <i>Action</i> "type" what to do. After processing
+    the <i>Action</i> the <i>Store</i> notifies the <i>Views</i> about a state
+    change.
+  </p>
+
+  <h3>View / Controller-Views</h3>
+  <p>
+    <i>Controller-Views</i> are the glue between the events broadcasted from the
+    <i>Stores</i> and the descendant <i>View</i> childs that render the data.
+  </p>
+
+  <h3>Read more</h3>
+  <ul>
+    <li>
+      <a
+        href="https://facebook.github.io/flux/docs/in-depth-overview.html"
+        target="_blank"
+        >Facebook Flux Overview</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207"
+        target="_blank"
+        >Flux Cartoon</a
+      >
+    </li>
+  </ul>
+</div>
