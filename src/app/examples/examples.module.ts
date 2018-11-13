@@ -9,6 +9,7 @@ import { CounterComponent } from './counter/counter.component';
 import { MaterialModule } from '../material.module';
 import * as BookSearch from './book-search/book-search.reducer';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BookSearchService } from './book-search/book-search.service';
 
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function(state, action) {
@@ -30,6 +31,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     StoreModule.forFeature('books', BookSearch.reducer),
     EffectsModule.forFeature([BookSearchEffects])
   ],
+  providers: [BookSearchService],
   declarations: [CounterComponent, BookSearchComponent],
   exports: [CounterComponent, BookSearchComponent]
 })
